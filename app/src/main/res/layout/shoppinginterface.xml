@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#4A474C"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/nesCafe"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/coffe" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="57dp"
+        android:layout_height="54dp"
+        android:onClick="toast15"
+        app:srcCompat="@drawable/carts" />
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:background="#4a474c"
+        android:text="NesCafe"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView45"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:background="#4a474c"
+        android:text="250"
+        android:textAlignment="center"
+        android:textColor="#997d6f"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
+
+
+
