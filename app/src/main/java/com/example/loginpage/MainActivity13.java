@@ -6,36 +6,49 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
-
-import adapter.RecyclerViewAdapter;
+import java.util.List;
 
 public class MainActivity13 extends AppCompatActivity {
-    private RecyclerView recyclerView;
-    private RecyclerViewAdapter recyclerViewAdapter;
-    private ArrayList<String> username;
-    private ArrayList<String> feedback;
-    ArrayAdapter<String> arrayAdapter;
+
+    RecyclerView recyclerView;
+    LinearLayoutManager layoutManager;
+    List<ModelClass> userList;
+    Adapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main13);
-        username.add("Aditya");
 
+        initData();
+        initRecyclerView();
 
+    }
 
+    private void initData() {
+        userList = new ArrayList<>();
+        userList.add(new ModelClass("Aditya:-","Thanks for the good product"));
+        userList.add(new ModelClass("Sumit:-","Not so good packing quality"));
+        userList.add(new ModelClass("Pranav:-","Late delivery"));
+        userList.add(new ModelClass("Omkar:-","Nice"));
+        userList.add(new ModelClass("Omkar:-","Taking too long to arrive"));
+        userList.add(new ModelClass("Girish:-","Don't buy"));
+    }
+
+    private void initRecyclerView() {
         recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(recyclerView.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
+        adapter= new Adapter(userList);
+        recyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
 
-        recyclerViewAdapter = new RecyclerViewAdapter(MainActivity13.this,username);
-        recyclerView.setAdapter(recyclerViewAdapter);
+    }
 
     }
 
 
 
-}

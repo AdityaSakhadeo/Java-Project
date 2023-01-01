@@ -19,7 +19,7 @@ public class MainActivity11 extends AppCompatActivity {
         registeredProducts.add("1.Milk");
         registeredProducts.add("2.Biscuits");
         registeredProducts.add("3.Bread");
-        registeredProducts.add("4.Coffie");
+        registeredProducts.add("4.Coffee");
 
         ArrayAdapter<String> showProducts = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,registeredProducts);
         myListView.setAdapter(showProducts);
