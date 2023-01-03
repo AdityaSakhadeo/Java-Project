@@ -8,6 +8,7 @@
     tools:context=".MainActivity15">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView2"
         android:layout_width="404dp"
         android:layout_height="584dp"
         app:layout_constraintBottom_toBottomOf="parent"

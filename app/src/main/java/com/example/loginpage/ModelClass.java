@@ -1,5 +1,6 @@
 package com.example.loginpage;
 
+
 public class ModelClass {
     private String textView38;
     private String textView39;
