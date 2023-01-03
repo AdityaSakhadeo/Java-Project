@@ -13,21 +13,25 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase DB) {
-        DB.execSQL("create table Userdetails(Username TEXT primary key,Password TEXT)");
+        DB.execSQL("create table adminDetails(id integer primary key autoincrement ,Username TEXT ,Password TEXT)");
+        DB.execSQL("create table customerDetails(id integer primary key autoincrement,Username TEXT primary key,Password TEXT)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase DB, int i, int i1) {
-        DB.execSQL("drop Table if exists Userdetails");
+        DB.execSQL("drop Table if exists adminDetails");
     }
 
-    public Boolean insertuserdata(String Username, String Password) {
+    public Boolean insertuserdata(Integer id,String Username, String Password) {
+        int a = 1;
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        contentValues.put("id",a);
         contentValues.put("Username", Username);
-        contentValues.put("password", Username);
+        contentValues.put("password", Password);
+        a = a+1;
 
-        long result = DB.insert("Userdetails", null, contentValues);
+        long result = DB.insert("adminDetails", null, contentValues);
         if (result == -1) {
             return false;
         } else {

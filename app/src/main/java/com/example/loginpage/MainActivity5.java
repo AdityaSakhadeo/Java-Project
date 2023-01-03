@@ -32,8 +32,9 @@ public class MainActivity5 extends AppCompatActivity {
         public void onClick(View view) {
             String Uname = editText1.getText().toString();
             String Pass = editText2.getText().toString();
+            int a = 1;
 
-            boolean checkinsertdata = db.insertuserdata(Uname,Pass);
+            boolean checkinsertdata = db.insertuserdata(a,Uname,Pass);
 
             if (checkinsertdata==true)
             {

@@ -18,6 +18,46 @@
         app:layout_constraintVertical_bias="0.5"
         tools:context=".MainActivity3">
 
+        <TextView
+            android:id="@+id/textView54"
+            android:layout_width="268dp"
+            android:layout_height="106dp"
+            android:layout_marginStart="172dp"
+            android:layout_marginBottom="38dp"
+            android:fontFamily="@font/aladin"
+            android:text="FlyBuy"
+            android:textColor="#997d6f"
+            android:textSize="80sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.19" />
+
+        <ImageView
+            android:id="@+id/imageView22"
+            android:layout_width="108dp"
+            android:layout_height="104dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.099"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.178"
+            app:srcCompat="@drawable/carts" />
+
+        <ImageView
+            android:id="@+id/imageView21"
+            android:layout_width="156dp"
+            android:layout_height="143dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.062"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/wings" />
+
         <EditText
             android:id="@+id/editTextTextEmailAddress"
             android:layout_width="wrap_content"
@@ -71,35 +111,6 @@
             app:layout_constraintVertical_bias="0.639" />
 
         <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="90dp"
-            android:layout_height="65dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.299"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.186"
-            app:srcCompat="@drawable/carts" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="38dp"
-            android:fontFamily="sans-serif-condensed-light"
-            android:text="FlyBuy"
-            android:textColor="#6200ED"
-            android:textSize="48sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.647"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.198" />
-
-        <ImageView
             android:id="@+id/imageView8"
             android:layout_width="157dp"
             android:layout_height="165dp"
@@ -118,10 +129,10 @@
             android:rotation="30"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.054"
+            app:layout_constraintHorizontal_bias="0.037"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.008"
+            app:layout_constraintVertical_bias="0.652"
             app:srcCompat="@drawable/onlineshop" />
 
         <TextView
