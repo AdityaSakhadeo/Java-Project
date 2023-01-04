@@ -95,7 +95,7 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="214dp"
+        android:layout_width="273dp"
         android:layout_height="70dp"
         android:fontFamily="@font/baloo_da"
         android:text="Difference"

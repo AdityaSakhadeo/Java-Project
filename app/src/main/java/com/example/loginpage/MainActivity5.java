@@ -15,37 +15,55 @@ import android.widget.Toast;
 
 
 public class MainActivity5 extends AppCompatActivity {
-    public EditText editText1;
-    public EditText editText2;
+    public EditText username;
+    public EditText password;
     public Button button1;
-    DBHelper db;
+    public Button button2;
+    DBHelper DB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main5);
-    editText1 = findViewById(R.id.editTextTextEmailAddress2);
-    editText2 = findViewById(R.id.editTextTextPassword2);
+    username = findViewById(R.id.editTextTextEmailAddress2);
+    password = findViewById(R.id.editTextTextPassword2);
     button1 = findViewById(R.id.button8);
-    db = new DBHelper(this);
-    button1.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            String Uname = editText1.getText().toString();
-            String Pass = editText2.getText().toString();
-            int a = 1;
+    button2 = findViewById(R.id.button15);
+    DB = new DBHelper(this);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Integer Ad_id=1;
+                String usernameTXT=username.getText().toString();
+                String passwordTXT=password.getText().toString();
 
-            boolean checkinsertdata = db.insertuserdata(a,Uname,Pass);
+                Boolean checkinsertdata = DB.insertuserdata(Ad_id,usernameTXT,passwordTXT);
 
-            if (checkinsertdata==true)
-            {
-                Toast.makeText(MainActivity5.this, "Data inserted", Toast.LENGTH_SHORT).show();
+                if(checkinsertdata==true){
+                    Toast.makeText(MainActivity5.this, "New Entry Inserted", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(MainActivity5.this, "New Entry not inserted", Toast.LENGTH_SHORT).show();
+                }
             }
-            else
-            {
-                Toast.makeText(MainActivity5.this, "Data not inserted", Toast.LENGTH_SHORT).show();
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Integer Cu_id=1;
+                String usernameTXT=username.getText().toString();
+                String passwordTXT=password.getText().toString();
+
+                Boolean checkinsertdata = DB.insertuserdata1(Cu_id,usernameTXT,passwordTXT);
+
+                if(checkinsertdata==true){
+                    Toast.makeText(MainActivity5.this, "New Entry Inserted", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(MainActivity5.this, "New Entry not inserted", Toast.LENGTH_SHORT).show();
+                }
             }
-        }
-    });
+        });
+
+
     }
     public void page2(View v)
     {
