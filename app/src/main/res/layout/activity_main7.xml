@@ -23,10 +23,9 @@
         app:srcCompat="@drawable/adminback3" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/productManagement"
         android:layout_width="155dp"
         android:layout_height="60dp"
-        android:onClick="page8"
         android:text="Product Management"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -167,10 +166,9 @@
         app:layout_constraintVertical_bias="0.13" />
 
     <TextView
-        android:id="@+id/textView27"
+        android:id="@+id/usernameMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Username"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"

@@ -3,6 +3,7 @@ package com.example.loginpage;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 
 import android.os.Bundle;
@@ -20,12 +21,14 @@ public class MainActivity5 extends AppCompatActivity {
     public Button button1;
     public Button button2;
     DBHelper DB;
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main5);
     username = findViewById(R.id.editTextTextEmailAddress2);
-    password = findViewById(R.id.editTextTextPassword2);
+    password = findViewById(R.id.Password);
     button1 = findViewById(R.id.button8);
     button2 = findViewById(R.id.button15);
     DB = new DBHelper(this);

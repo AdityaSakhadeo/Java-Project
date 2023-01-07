@@ -5,56 +5,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#313b43"
-    tools:context=".MainActivity15">
+    tools:context=".MainActivity17">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView2"
-        android:layout_width="401dp"
-        android:layout_height="467dp"
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="273dp"
+        android:layout_height="277dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.715" />
+        app:layout_constraintVertical_bias="0.563"
+        app:srcCompat="@drawable/qrcode" />
 
     <TextView
-        android:id="@+id/textView47"
+        android:id="@+id/textView57"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="104dp"
-        android:text="Your Cart"
+        android:text="Scan To  Pay"
         android:textColor="#6200ED"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView40"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.08" />
-
-    <Button
-        android:id="@+id/button16"
-        android:layout_width="173dp"
-        android:layout_height="49dp"
-        android:text="Remove All"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.072"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.16" />
 
-    <Button
-        android:id="@+id/button17"
-        android:layout_width="173dp"
-        android:layout_height="49dp"
-        android:text="Buy Now"
+    <TextView
+        android:id="@+id/totalbill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toatal BIll"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
-
+        app:layout_constraintVertical_bias="0.824" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,6 +25,7 @@ public class MainActivity15 extends AppCompatActivity {
         initData();
         initRecyclerView();
 
+
     }
 
 
@@ -47,7 +48,7 @@ public class MainActivity15 extends AppCompatActivity {
         adapter2.notifyDataSetChanged();
     }
 
-    public void removeView()
+    public void Calculate()
     {
 
     }

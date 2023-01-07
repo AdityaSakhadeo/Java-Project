@@ -8,12 +8,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity3 extends AppCompatActivity {
-    Button button;
-    EditText editText1;
-    EditText editText2;
-    TextView textView1;
+    public Button button;
+    public EditText editText1;
+    public EditText editText2;
+    public TextView textView1;
+
+    DBHelper db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,20 +24,34 @@ public class MainActivity3 extends AppCompatActivity {
         button = findViewById(R.id.button4);
         editText1 = findViewById(R.id.editTextTextEmailAddress);
         editText2 = findViewById(R.id.editTextTextPassword);
+        textView1 = findViewById(R.id.errorMessage);
+        db = new DBHelper(this);
 
-        String username = editText1.getText().toString();
-        String password = editText2.getText().toString();
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             //Check the if the username and the password is valid or not    (Omkar Sawant)
             public void onClick(View view) {
-                if(true)
-                {
-                    page7(view);
+                String usernameTXT=editText1.getText().toString();
+                String passwordTXT=editText2.getText().toString();
+
+
+                if(usernameTXT.equals("")||passwordTXT.equals("")){
+                    textView1.setText("Enter all the fields");
                 }
-                else
-                {
-                    textView1.setText("Username or Password mismatched");
+                else{
+                    Boolean checkuserpass = db.checkusernamepassword(usernameTXT, passwordTXT);
+                    if(checkuserpass==true){
+                        Toast.makeText(MainActivity3.this, "Login Succesful", Toast.LENGTH_SHORT).show();
+                        Intent intent=new Intent(getApplicationContext(),MainActivity5.class);
+
+                        startActivity(intent);
+
+                        Intent intent7 = new Intent(MainActivity3.this,MainActivity7.class);
+                        intent7.putExtra("name",usernameTXT);
+                        startActivity(intent7);
+                    }else{
+                        textView1.setText("Invalid Credentials");
+                    }
                 }
             }
         });
@@ -42,7 +59,8 @@ public class MainActivity3 extends AppCompatActivity {
 
     public void page7(View v)
     {
-        Intent intent7 = new Intent(this,MainActivity7.class);
+        Intent intent7 = new Intent(MainActivity3.this,MainActivity7.class);
+
         startActivity(intent7);
     }
 }

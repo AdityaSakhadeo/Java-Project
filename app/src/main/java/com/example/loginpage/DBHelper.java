@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.provider.ContactsContract;
+import android.view.ContextThemeWrapper;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,7 +21,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase DB) {
         DB.execSQL("create table Admindetails(Ad_id integer primary key autoincrement,Username TEXT,Password TEXT)");
         DB.execSQL("create table Customerdetails(Cu_id integer primary key autoincrement,Username TEXT,Password TEXT)");
-
+        DB.execSQL("create table productDetails(p_id integer primary key autoincrement,p_name TEXT,p_cost integer,p_quantity integer)");
     }
 
 
@@ -30,6 +32,26 @@ public class DBHelper extends SQLiteOpenHelper {
         DB.execSQL("drop Table if exists Customerdetails");
     }
 
+    public boolean checkusernamepassword(String Username,String Password){
+        SQLiteDatabase DB = this.getWritableDatabase();
+        Cursor cursor = DB.rawQuery("Select * from Admindetails where Username= ? and Password=?", new String[]{Username,Password});
+        if(cursor.getCount()>0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    public boolean checkusernamepassword1(String Username,String Password){
+        SQLiteDatabase DB = this.getWritableDatabase();
+        Cursor cursor = DB.rawQuery("Select * from Customerdetails where Username= ? and Password=?", new String[]{Username,Password});
+        if(cursor.getCount()>0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
     public Boolean insertuserdata(Integer Ad_id,String Username, String Password) {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -57,6 +79,25 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
         }
     }
+
+    public Boolean insertProduct(Integer p_id,String name,Integer cost,Integer quantity)
+    {
+        SQLiteDatabase DB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("p_id",p_id);
+        contentValues.put("p_name",name);
+        contentValues.put("p_cost",cost);
+        contentValues.put("p_quantity",quantity);
+        long result = DB.insert("productDetails",null,contentValues);
+        if (result==-1){
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
 
     public Boolean updateuserdata(String name, String contact, String dob) {
         SQLiteDatabase DB = this.getWritableDatabase();
@@ -95,15 +136,18 @@ public class DBHelper extends SQLiteOpenHelper {
             return false;
         }
 
+
+
     }
 
     public Cursor getdata() {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
-        Cursor cursor = DB.rawQuery("Select * from Userdetails",null);
+        Cursor cursor = DB.rawQuery("Select Username from AdminDetails",null);
 
         return cursor;
 
     }
+
 }

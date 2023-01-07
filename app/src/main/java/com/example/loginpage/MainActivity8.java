@@ -2,16 +2,23 @@ package com.example.loginpage;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity8 extends AppCompatActivity {
 
+    TextView newUsername;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main8);
+        newUsername = findViewById(R.id.userMain2);
+        Intent intent = getIntent();
+        String username=getIntent().getStringExtra("name2");
+        newUsername.setText(username.toUpperCase());
     }
         public void page9(View v)
         {

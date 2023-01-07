@@ -63,12 +63,14 @@ public class Adapter2 extends RecyclerView.Adapter<Adapter2.ViewHolder>{
         private TextView textView48;
         private TextView textView49;
         private ImageView imageView18;
+        private TextView textView1;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             textView48 = itemView.findViewById(R.id.textView48);
             textView49 = itemView.findViewById(R.id.textView49);
             imageView18= itemView.findViewById(R.id.imageView18);
+            textView1 = itemView.findViewById(R.id.totalbill);
         }
 
         public void setdata(String productName, String price,int image) {
@@ -76,5 +78,8 @@ public class Adapter2 extends RecyclerView.Adapter<Adapter2.ViewHolder>{
             textView49.setText(price);
             imageView18.setImageResource(image);
         }
+
+
+
     }
 }

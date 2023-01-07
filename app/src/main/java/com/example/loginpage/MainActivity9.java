@@ -8,10 +8,13 @@ import android.widget.Toast;
 
 public class MainActivity9 extends AppCompatActivity {
 
+    DBHelper db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main9);
+        db = new DBHelper(this);
+
     }
         public void onClickAdd(View v)
         {
