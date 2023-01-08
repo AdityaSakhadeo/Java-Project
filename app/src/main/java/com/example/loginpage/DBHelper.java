@@ -21,7 +21,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase DB) {
         DB.execSQL("create table Admindetails(Ad_id integer primary key autoincrement,Username TEXT,Password TEXT)");
         DB.execSQL("create table Customerdetails(Cu_id integer primary key autoincrement,Username TEXT,Password TEXT)");
-        DB.execSQL("create table productDetails(p_id integer primary key autoincrement,p_name TEXT,p_cost integer,p_quantity integer)");
+        DB.execSQL("create table productDetails(p_id integer primary key autoincrement,Ad_id integer,p_name TEXT,p_cost TEXT,p_quantity TEXT , constraint fk_Admindetails foreign key (Ad_id) references Admindetails(Ad_id)  )");
     }
 
 
@@ -30,6 +30,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase DB,int i1,int i2) {
         DB.execSQL("drop Table if exists Admindetails");
         DB.execSQL("drop Table if exists Customerdetails");
+        DB.execSQL("drop table if exists productDetails");
     }
 
     public boolean checkusernamepassword(String Username,String Password){
@@ -80,14 +81,17 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public Boolean insertProduct(Integer p_id,String name,Integer cost,Integer quantity)
+    public Boolean insertProduct(Integer p_id,String name,String cost,String quantity,Integer ad_id)
     {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("p_id",p_id);
+
+
         contentValues.put("p_name",name);
         contentValues.put("p_cost",cost);
         contentValues.put("p_quantity",quantity);
+        contentValues.put("Ad_id",ad_id);
+        //contentValues.put("Ad_id",ad_id);
         long result = DB.insert("productDetails",null,contentValues);
         if (result==-1){
             return false;
@@ -140,14 +144,19 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    public Cursor getdata() {
+    public Cursor getdata(String username) {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-
-        Cursor cursor = DB.rawQuery("Select Username from AdminDetails",null);
-
+        int ad_id=-1;
+        Cursor cursor = DB.rawQuery("Select Ad_id from AdminDetails where Username= " +username,null);
         return cursor;
-
     }
+
+    public int GetId(String username) {
+        SQLiteDatabase myDB = this.getWritableDatabase();
+        Cursor getNoteId = myDB.rawQuery("select Ad_id from Admindetails where Username = '"+username+"'",null);
+        return getNoteId.getColumnIndex("Ad_id");
+    }
+
 
 }
