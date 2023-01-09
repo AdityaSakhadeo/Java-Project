@@ -22,6 +22,7 @@ public class DBHelper extends SQLiteOpenHelper {
         DB.execSQL("create table Admindetails(Ad_id integer primary key autoincrement,Username TEXT,Password TEXT)");
         DB.execSQL("create table Customerdetails(Cu_id integer primary key autoincrement,Username TEXT,Password TEXT)");
         DB.execSQL("create table productDetails(p_id integer primary key autoincrement,Ad_id integer,p_name TEXT,p_cost TEXT,p_quantity TEXT , constraint fk_Admindetails foreign key (Ad_id) references Admindetails(Ad_id)  )");
+        DB.execSQL("create table feedbacks(c_name TEXT,Feedback TEXT)");
     }
 
 
@@ -81,7 +82,7 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public Boolean insertProduct(Integer p_id,String name,String cost,String quantity,Integer ad_id)
+    public Boolean insertProduct(Integer p_id,Integer ad_id,String name,String cost,String quantity)
     {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -158,5 +159,19 @@ public class DBHelper extends SQLiteOpenHelper {
         return getNoteId.getColumnIndex("Ad_id");
     }
 
+    public Boolean feedback(String Name,String Feedback) {
+        SQLiteDatabase DB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("Name", Name);
+        contentValues.put("Feedback", Feedback);
+
+        long result = DB.insert("Feedbackdetails", null, contentValues);
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 
 }
+

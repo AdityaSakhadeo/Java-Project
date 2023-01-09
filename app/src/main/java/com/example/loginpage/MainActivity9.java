@@ -73,6 +73,7 @@ public class MainActivity9 extends AppCompatActivity {
                 String CostTXT = editText2.getText().toString();
                 String QuantityTXT = editText3.getText().toString();
 
+
                 if (NameTXT.equals(""))
                 {
                     errorFields.setText("Please enter name of the product");
@@ -86,8 +87,9 @@ public class MainActivity9 extends AppCompatActivity {
                     errorFields.setText("Please enter the quantity of the product");
                 }
                 else {
+                    Toast.makeText(MainActivity9.this, username, Toast.LENGTH_SHORT).show();
                     int ad_id = db.GetId(username);
-                    Boolean checkinsertdata = db.insertProduct(Pd_id, NameTXT, CostTXT, QuantityTXT,ad_id);
+                    Boolean checkinsertdata = db.insertProduct(Pd_id, ad_id,NameTXT, CostTXT, QuantityTXT);
 
                     if (checkinsertdata == true) {
                         Toast.makeText(MainActivity9.this, "New Product Added", Toast.LENGTH_SHORT).show();
