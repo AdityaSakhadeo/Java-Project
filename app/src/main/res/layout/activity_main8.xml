@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2B3541"
+    android:background="#232C32"
     tools:context=".MainActivity8">
 
     <ImageView
@@ -57,14 +57,14 @@
         android:layout_width="340dp"
         android:layout_height="326dp"
         android:background="#B29F90"
-        android:backgroundTint="#2B3541"
+        android:backgroundTint="#232C32"
         android:padding="-10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.128"
+        app:layout_constraintVertical_bias="0.18"
         app:srcCompat="@drawable/productmanagement" />
 
     <Button
@@ -73,7 +73,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="158dp"
         android:layout_marginEnd="159dp"
-        android:onClick="page9"
         android:text="Add Product"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -83,10 +82,9 @@
         app:layout_constraintVertical_bias="0.689" />
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/removeProduct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="page10"
         android:text="Remove Product"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,19 +94,18 @@
         app:layout_constraintVertical_bias="0.815" />
 
     <Button
-        android:id="@+id/button12"
+        android:id="@+id/viewProduct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="158dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="159dp"
         android:layout_marginBottom="30dp"
-        android:onClick="page11"
         android:text="View Products"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button11" />
+        app:layout_constraintTop_toBottomOf="@+id/removeProduct" />
 
     <TextView
         android:id="@+id/textView32"

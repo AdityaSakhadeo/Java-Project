@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#313b43"
+    android:background="#232C32"
     tools:context=".MainActivity2">
 
     <Button
@@ -27,7 +27,7 @@
         android:layout_height="80dp"
         android:fontFamily="@font/aladin"
         android:text="Select login type"
-        android:textColor="#997d6f"
+        android:textColor="#6200ED"
         android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed-light"
         android:text="Don't have account?"
-        android:textColor="#997d6f"
+        android:textColor="#6200ED"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

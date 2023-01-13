@@ -1,54 +1,59 @@
 package com.example.loginpage;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
+import android.database.Cursor;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity13 extends AppCompatActivity {
 
-    RecyclerView recyclerView;
-    LinearLayoutManager layoutManager;
-    List<ModelClass> userList;
-    Adapter adapter;
+    public Button button;
+    DBHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main13);
+        button = findViewById(R.id.button6);
+        DB = new DBHelper(this);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Cursor res = DB.getFeedback();
+                if (res.getCount() == 0) {
+                    Toast.makeText(MainActivity13.this, "No feedback", Toast.LENGTH_SHORT).show();
+                    return;
+                } else {
+                    StringBuffer buffer = new StringBuffer();
+                    while (res.moveToNext()) {
 
-        initData();
-        initRecyclerView();
+                        buffer.append("Name     :" + res.getString(1) + "\n");
+                        buffer.append("Feedback     :" + res.getString(2) + "\n");
+
+                    }
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity13.this);
+                    builder.setCancelable(true);
+                    builder.setTitle("Product Entries");
+                    builder.setMessage(buffer.toString());
+                    builder.show();
+                }
+            }
+
+        });
 
     }
+}
 
-    private void initData() {
-        userList = new ArrayList<>();
-        userList.add(new ModelClass("Aditya:-","Thanks for the good product"));
-        userList.add(new ModelClass("Sumit:-","Not so good packing quality"));
-        userList.add(new ModelClass("Pranav:-","Late delivery"));
-        userList.add(new ModelClass("Omkar:-","Nice"));
-        userList.add(new ModelClass("Omkar:-","Taking too long to arrive"));
-        userList.add(new ModelClass("Girish:-","Don't buy"));
-    }
 
-    private void initRecyclerView() {
-        recyclerView = findViewById(R.id.recyclerView);
-        layoutManager = new LinearLayoutManager(this);
-        layoutManager.setOrientation(recyclerView.VERTICAL);
-        recyclerView.setLayoutManager(layoutManager);
-        adapter= new Adapter(userList);
-        recyclerView.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
 
-    }
 
-    }
+
+
 
 
 

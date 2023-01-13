@@ -12,6 +12,8 @@ import android.widget.TextView;
 public class MainActivity8 extends AppCompatActivity {
 
     public Button button;
+    public Button button2;
+    public Button button3;
     TextView newUsername;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -20,6 +22,8 @@ public class MainActivity8 extends AppCompatActivity {
         setContentView(R.layout.activity_main8);
         newUsername = findViewById(R.id.userMain2);
         button = findViewById(R.id.addProduct);
+        button2 = findViewById(R.id.removeProduct);
+        button3 = findViewById(R.id.viewProduct);
         Intent intent = getIntent();
         String username=getIntent().getStringExtra("name2");
         newUsername.setText(username.toUpperCase());
@@ -33,6 +37,23 @@ public class MainActivity8 extends AppCompatActivity {
             }
         });
 
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent10 = new Intent(MainActivity8.this,MainActivity10.class);
+                intent10.putExtra("name",username);
+                startActivity(intent10);
+            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent11=new Intent(MainActivity8.this,MainActivity11.class);
+                intent11.putExtra("name",username);
+                startActivity(intent11);
+            }
+        });
     }
         public void page9(View v)
         {

@@ -22,7 +22,7 @@ public class DBHelper extends SQLiteOpenHelper {
         DB.execSQL("create table Admindetails(Ad_id integer primary key autoincrement,Username TEXT,Password TEXT)");
         DB.execSQL("create table Customerdetails(Cu_id integer primary key autoincrement,Username TEXT,Password TEXT)");
         DB.execSQL("create table productDetails(p_id integer primary key autoincrement,Ad_id integer,p_name TEXT,p_cost TEXT,p_quantity TEXT , constraint fk_Admindetails foreign key (Ad_id) references Admindetails(Ad_id)  )");
-        DB.execSQL("create table feedbacks(c_name TEXT,Feedback TEXT)");
+        DB.execSQL("create table Feedbackdetails(Ad_id integer,c_name TEXT primary key,Feedback TEXT,foreign key(Ad_id) references Admindetails(Ad_id))");
     }
 
 
@@ -32,6 +32,7 @@ public class DBHelper extends SQLiteOpenHelper {
         DB.execSQL("drop Table if exists Admindetails");
         DB.execSQL("drop Table if exists Customerdetails");
         DB.execSQL("drop table if exists productDetails");
+        DB.execSQL("drop table if exists Feedbackdetails");
     }
 
     public boolean checkusernamepassword(String Username,String Password){
@@ -87,11 +88,11 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
-
+        contentValues.put("Ad_id",ad_id);
         contentValues.put("p_name",name);
         contentValues.put("p_cost",cost);
         contentValues.put("p_quantity",quantity);
-        contentValues.put("Ad_id",ad_id);
+
         //contentValues.put("Ad_id",ad_id);
         long result = DB.insert("productDetails",null,contentValues);
         if (result==-1){
@@ -103,6 +104,21 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
+
+    public Boolean insert_feedback(Integer ad_id,String Name,String Feedback) {
+        SQLiteDatabase DB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("Ad_id",ad_id);
+        contentValues.put("c_name", Name);
+        contentValues.put("Feedback", Feedback);
+
+        long result = DB.insert("Feedbackdetails", null, contentValues);
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 
     public Boolean updateuserdata(String name, String contact, String dob) {
         SQLiteDatabase DB = this.getWritableDatabase();
@@ -140,18 +156,15 @@ public class DBHelper extends SQLiteOpenHelper {
         } else {
             return false;
         }
-
-
-
     }
 
-    public Cursor getdata(String username) {
-        SQLiteDatabase DB = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        int ad_id=-1;
-        Cursor cursor = DB.rawQuery("Select Ad_id from AdminDetails where Username= " +username,null);
+    public Cursor getproduct()
+    {
+        SQLiteDatabase DB = this.getReadableDatabase();
+        Cursor cursor = DB.rawQuery("select * from productDetails",null);
         return cursor;
     }
+
 
     public int GetId(String username) {
         SQLiteDatabase myDB = this.getWritableDatabase();
@@ -159,19 +172,43 @@ public class DBHelper extends SQLiteOpenHelper {
         return getNoteId.getColumnIndex("Ad_id");
     }
 
-    public Boolean feedback(String Name,String Feedback) {
+    public Cursor getdata() {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("Name", Name);
-        contentValues.put("Feedback", Feedback);
 
-        long result = DB.insert("Feedbackdetails", null, contentValues);
-        if (result == -1) {
-            return false;
-        } else {
-            return true;
-        }
+        Cursor cursor = DB.rawQuery("Select * from productDetails",null);
+
+        return cursor;
+
     }
 
+    public Cursor getFeedback() {
+        SQLiteDatabase DB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        Cursor cursor = DB.rawQuery("Select * from Feedbackdetails",null);
+
+        return cursor;
+
+    }
+
+    public Boolean deleteproductdata(String Name) {
+        SQLiteDatabase DB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        Cursor cursor = DB.rawQuery("Select * from productDetails where p_name = ?", new String[]{Name});
+
+        if (cursor.getCount() > 0) {
+            long result = DB.delete("productDetails", "Name=?", new String[]{Name});
+            if (result == -1) {
+                return false;
+            } else {
+                return true;
+            }
+        } else {
+            return false;
+        }
+
+    }
 }
 

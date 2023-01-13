@@ -21,7 +21,6 @@
         android:id="@+id/imageView16"
         android:layout_width="57dp"
         android:layout_height="54dp"
-        android:onClick="toast15"
         app:srcCompat="@drawable/carts" />
 
     <TextView

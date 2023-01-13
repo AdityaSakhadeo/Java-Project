@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#313b43"
+        android:background="#232C32"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -26,7 +26,7 @@
             android:layout_marginBottom="38dp"
             android:fontFamily="@font/aladin"
             android:text="FlyBuy"
-            android:textColor="#997d6f"
+            android:textColor="#6200ED"
             android:textSize="80sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"

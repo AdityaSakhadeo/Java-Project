@@ -15,7 +15,9 @@ public class MainActivity17 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main17);
         textView1 = findViewById(R.id.totalbill);
-        cost = findViewById(R.id.textView49);
+
+        int cost = getIntent().getIntExtra("totalbill",100);
+        textView1.setText("Your total bill is ₹"+cost);
 
     }
 }

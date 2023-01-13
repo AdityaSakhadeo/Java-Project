@@ -46,10 +46,14 @@ public class MainActivity4 extends AppCompatActivity {
                     Boolean checkuserpass = db.checkusernamepassword1(usernameTXT, passwordTXT);
                     if (checkuserpass == true) {
                         Toast.makeText(MainActivity4.this, "Login Succesful", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(), MainActivity5.class);
-                        startActivity(intent);
+                        Intent intent14 = new Intent(getApplicationContext(), MainActivity5.class);
+                       // intent14.putExtra("customer",usernameTXT);
+                        startActivity(intent14);
                         loadingScreen1.startLoadingScreen();
-                        page14(view);
+                        Intent intent14a = new Intent(MainActivity4.this,MainActivity14.class);
+                        intent14a.putExtra("customer",usernameTXT);
+                        startActivity(intent14a);
+
                     } else {
                         errorMessage.setText("Invalid Credentials");
                         tip.setText("*If dont hava an account\nPlease consider creating one");
