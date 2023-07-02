@@ -5,20 +5,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp">
+    android:layout_height="100dp"
+    android:background="@color/white"
+    app:cardBackgroundColor="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/row"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#313b43">
+        android:background="@color/white">
 
         <TextView
             android:id="@+id/textView38"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Username"
-            android:textColor="@color/white"
+            android:textColor="@color/purple_500"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -34,7 +36,7 @@
             android:layout_height="wrap_content"
             android:text="TextView"
             android:textAlignment="viewStart"
-            android:textColor="@color/purple_500"
+            android:textColor="@color/yellow"
             android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

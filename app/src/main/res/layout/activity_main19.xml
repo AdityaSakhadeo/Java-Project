@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#232C32"
+    android:background="@color/white"
     tools:context=".MainActivity19">
 
     <Button
@@ -27,7 +27,7 @@
         android:gravity="start|top"
         android:hint="Enter Feedback"
         android:inputType="textMultiLine"
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/yellow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.595"
@@ -42,7 +42,7 @@
         android:ems="10"
         android:hint="What should be the name for the feedback"
         android:inputType="textPersonName"
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/yellow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.518"
@@ -67,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Give Feedback"
-        android:textColor="@color/purple_500"
+        android:textColor="@color/yellow"
         android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

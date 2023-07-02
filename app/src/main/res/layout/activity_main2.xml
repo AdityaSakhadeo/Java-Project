@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#232C32"
+    android:background="@color/white"
     tools:context=".MainActivity2">
 
     <Button
@@ -27,7 +27,7 @@
         android:layout_height="80dp"
         android:fontFamily="@font/aladin"
         android:text="Select login type"
-        android:textColor="#6200ED"
+        android:textColor="@color/yellow"
         android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

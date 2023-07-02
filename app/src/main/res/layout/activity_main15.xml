@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#232C32"
+    android:background="@color/white"
     tools:context=".MainActivity15">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="104dp"
         android:text="Your Cart"
-        android:textColor="#6200ED"
+        android:textColor="#FFC107"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

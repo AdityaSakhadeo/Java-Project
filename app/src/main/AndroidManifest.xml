@@ -60,7 +60,7 @@
         <activity
             android:name=".MainActivity14"
             android:exported="false"
-            android:label="FlyBuy 𓆩♡𓆪->Shopping portal"
+            android:label="FlyBuy"
             android:parentActivityName=".MainActivity4">
             <meta-data
                 android:name="android.app.lib_name"
@@ -69,7 +69,7 @@
         <activity
             android:name=".MainActivity12"
             android:exported="false"
-            android:label="FlyBuy 𓆩♡𓆪->Growth Analysis"
+            android:label="FlyBuy"
             android:parentActivityName=".MainActivity7">
             <meta-data
                 android:name="android.app.lib_name"
@@ -78,7 +78,7 @@
         <activity
             android:name=".MainActivity13"
             android:exported="false"
-            android:label="FlyBuy 𓆩♡𓆪->Feedbacks"
+            android:label="FlyBuy"
             android:parentActivityName=".MainActivity7">
             <meta-data
                 android:name="android.app.lib_name"
@@ -87,7 +87,7 @@
         <activity
             android:name=".MainActivity11"
             android:exported="false"
-            android:label="FlyBuy 𓆩♡𓆪->View Products"
+            android:label="FlyBuy"
             android:parentActivityName=".MainActivity8">
             <meta-data
                 android:name="android.app.lib_name"
@@ -96,7 +96,7 @@
         <activity
             android:name=".MainActivity10"
             android:exported="false"
-            android:label="FlyBuy 𓆩♡𓆪->Remove Product"
+            android:label="FlyBuy"
             android:parentActivityName=".MainActivity8">
             <meta-data
                 android:name="android.app.lib_name"
@@ -105,7 +105,7 @@
         <activity
             android:name=".MainActivity9"
             android:exported="false"
-            android:label="FlyBuy 𓆩♡𓆪->Add Product"
+            android:label="FlyBuy"
             android:parentActivityName=".MainActivity8">
             <meta-data
                 android:name="android.app.lib_name"
@@ -114,7 +114,7 @@
         <activity
             android:name=".MainActivity8"
             android:exported="false"
-            android:label="FlyBuy 𓆩♡𓆪->Product Management"
+            android:label="FlyBuy"
             android:parentActivityName=".MainActivity7">
             <meta-data
                 android:name="android.app.lib_name"
@@ -123,7 +123,7 @@
         <activity
             android:name=".MainActivity7"
             android:exported="false"
-            android:label="FlyBuy 𓆩♡𓆪->Admin Action"
+            android:label="FlyBuy"
             android:parentActivityName=".MainActivity3">
             <meta-data
                 android:name="android.app.lib_name"
@@ -132,7 +132,7 @@
         <activity
             android:name=".MainActivity6"
             android:exported="false"
-            android:label="FlyBuy 𓆩♡𓆪->Shopping portal Cust"
+            android:label="FlyBuy"
             android:parentActivityName=".MainActivity4">
             <meta-data
                 android:name="android.app.lib_name"
@@ -141,7 +141,7 @@
         <activity
             android:name=".MainActivity5"
             android:exported="false"
-            android:label="FlyBuy 𓆩♡𓆪->Create new Account"
+            android:label="FlyBuy"
             android:parentActivityName=".MainActivity2">
             <meta-data
                 android:name="android.app.lib_name"
@@ -150,7 +150,7 @@
         <activity
             android:name=".MainActivity4"
             android:exported="false"
-            android:label="FlyBuy 𓆩♡𓆪->Customer Login"
+            android:label="FlyBuy"
             android:parentActivityName=".MainActivity2">
             <meta-data
                 android:name="android.app.lib_name"
@@ -159,7 +159,7 @@
         <activity
             android:name=".MainActivity3"
             android:exported="false"
-            android:label="FlyBuy 𓆩♡𓆪->Admin Login"
+            android:label="FlyBuy"
             android:parentActivityName=".MainActivity2">
             <meta-data
                 android:name="android.app.lib_name"
@@ -168,7 +168,7 @@
         <activity
             android:name=".MainActivity2"
             android:exported="false"
-            android:label="FlyBuy 𓆩♡𓆪->Login Type"
+            android:label="FlyBuy"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.app.lib_name"

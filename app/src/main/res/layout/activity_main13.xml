@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#232C32"
+    android:background="@color/white"
     tools:context=".MainActivity13">
 
     <TextView
@@ -14,7 +14,7 @@
         android:fontFamily="casual"
         android:text="User Feedbacks"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/yellow"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

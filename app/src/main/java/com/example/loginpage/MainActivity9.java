@@ -35,9 +35,9 @@ public class MainActivity9 extends AppCompatActivity {
     StorageReference storageReference;
     ProgressDialog progressDialog;
     public ImageView imageView;
-    EditText editText1;
-    EditText editText2;
-    EditText editText3;
+    EditText p_name;
+    EditText p_price;
+    EditText p_quan;
     TextView newusername;
     TextView errorFields;
     public Button button1;
@@ -50,9 +50,9 @@ public class MainActivity9 extends AppCompatActivity {
         binding = ActivityMain9Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         button1 = findViewById(R.id.insertProduct);
-        editText1 = findViewById(R.id.editTextTextPersonName2);
-        editText2 = findViewById(R.id.editTextTextPersonName3);
-        editText3 = findViewById(R.id.editTextTextPersonName4);
+        p_name = findViewById(R.id.editTextTextPersonName2);
+        p_price = findViewById(R.id.editTextTextPersonName3);
+        p_quan = findViewById(R.id.editTextTextPersonName4);
         errorFields = findViewById(R.id.allFields);
         newusername = findViewById(R.id.userMain3);
         imageView = findViewById(R.id.imageView20);
@@ -69,9 +69,9 @@ public class MainActivity9 extends AppCompatActivity {
             public void onClick(View view) {
 
                Integer Pd_id = 1;
-                String NameTXT = editText1.getText().toString();
-                String CostTXT = editText2.getText().toString();
-                String QuantityTXT = editText3.getText().toString();
+                String NameTXT = p_name.getText().toString();
+                String CostTXT = p_price.getText().toString();
+                String QuantityTXT = p_quan.getText().toString();
 
 
                 if (NameTXT.equals(""))
@@ -120,6 +120,12 @@ public class MainActivity9 extends AppCompatActivity {
     }
 
     private void uploadImage() {
+        EditText p_name = findViewById(R.id.editTextTextPersonName2);
+        String name = p_name.getText().toString();
+        EditText p_price = findViewById(R.id.editTextTextPersonName3);
+        String price = p_price.getText().toString();
+        EditText p_quan = findViewById(R.id.editTextTextPersonName4);
+        String quan = p_quan.getText().toString();
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Uploading Image...");
         progressDialog.show();
@@ -128,7 +134,7 @@ public class MainActivity9 extends AppCompatActivity {
         Date now = new Date();
        // String fileName = formatter.format(now);
         String username = getIntent().getStringExtra("name");
-        String fileName = username;
+        String fileName = name;
         storageReference = FirebaseStorage.getInstance().getReference("image/*" + fileName);
         storageReference.putFile(imageurl)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
